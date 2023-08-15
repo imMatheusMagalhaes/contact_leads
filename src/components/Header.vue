@@ -1,7 +1,7 @@
 <template>
   <div class="container-header">
-    <input v-model="name" :oninput="searchByName" type="text" placeholder="nome do cliente">
-    <button>
+    <input v-model="name" @input="searchByName" type="text" placeholder="nome do cliente">
+    <button @click="searchByName">
       <i class="fa fa-search icon"></i>
     </button>
   </div>
@@ -20,18 +20,25 @@ export default {
     }
   },
   mounted() {
-    const usersStorages = sessionStorage.getItem(store.serssionKey)
-    this.cloneUsers = JSON.parse(usersStorages)
+
   },
   methods: {
     searchByName() {
+      if (this.cloneUsers.length === 0)
+        this.getUsersSessionStorage()
+
       const searchResult = this.cloneUsers.filter(user => {
         return user.name.toLocaleLowerCase().includes(this.name.toLocaleLowerCase())
       })
+      
       if (this.name.length === 0)
         store.users = this.cloneUsers
       else
         store.users = searchResult
+    },
+    getUsersSessionStorage() {
+      const usersStorages = sessionStorage.getItem(store.serssionKey)
+      this.cloneUsers = JSON.parse(usersStorages)
     }
   }
 }
