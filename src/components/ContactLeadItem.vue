@@ -13,7 +13,6 @@
         <div class="user-data">{{ user.email }}</div>
         <a :href="'https://' + user.website" target="_blank" class="user-data site">{{ user.website }}</a>
         <div class="actions">
-          <button><i class="fa-solid fa-heart"></i></button>
           <button @click="openEmail(user.email)"><i class="fa-solid fa-envelope"></i></button>
           <button @click="openGeo(user.address.geo)"><i class="fa fa-map-location-dot"></i></button>
         </div>
@@ -44,10 +43,8 @@ export default {
 <style>
 .card {
   background: #fff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
   width: 400px;
   flex-direction: row;
-  /* border-radius: 25px; */
 }
 
 .card h2 {
@@ -69,16 +66,14 @@ export default {
 }
 
 .card .actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  padding: 0.5rem 1rem;
+  display: flex;
+  width: 10%;
+  padding: 11px;
 }
 
 .img-avatar {
   width: 80px;
   height: 80px;
-  /* border-radius: 50%; */
   border: 6px solid white;
   background-color: black;
   top: 15px;
@@ -107,8 +102,6 @@ export default {
 .portada {
   width: 100%;
   height: 100%;
-  /* border-top-left-radius: 20px; */
-  /* border-bottom-left-radius: 20px; */
   background-color: green;
   background-position: bottom center;
   background-size: cover;

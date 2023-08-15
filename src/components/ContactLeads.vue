@@ -21,7 +21,6 @@ export default {
 </script>
 <style>
 .contact-leads {
-  margin-top: 95px;
   .container-contact-leads {
     margin: 20px;
     display: flex;

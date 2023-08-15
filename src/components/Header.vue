@@ -11,7 +11,7 @@ import { store } from '../store'
 
 export default {
   name: "header",
-  props: {},
+  props: [],
   components: {},
   data() {
     return {
@@ -30,7 +30,7 @@ export default {
       const searchResult = this.cloneUsers.filter(user => {
         return user.name.toLocaleLowerCase().includes(this.name.toLocaleLowerCase())
       })
-      
+
       if (this.name.length === 0)
         store.users = this.cloneUsers
       else

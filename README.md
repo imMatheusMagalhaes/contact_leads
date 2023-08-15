@@ -1,7 +1,21 @@
-# Vue 3 + Vite
+# Integrado API
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### NodeJS version 
+    <= v18.17.1
+    >= v16.15.1
 
-## Recommended IDE Setup
+## Install npm packages
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+    yarn install
+
+## Run the app (local)
+
+    yarn dev
+
+## Build app
+
+    yarn build
+
+## Run the app with build
+
+    yarn preview
