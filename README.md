@@ -1,5 +1,3 @@
-# Integrado API
-
 ### NodeJS version 
     <= v18.17.1
     >= v16.15.1
