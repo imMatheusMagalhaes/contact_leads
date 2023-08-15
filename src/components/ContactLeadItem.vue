@@ -1,34 +1,28 @@
 <template >
   <div class="card">
-    <div class="img-avatar">
-      <minidenticon-svg :key="user.id" :username="user.name"></minidenticon-svg>
-    </div>
-
     <div class="card-text">
       <div class="portada">
-
-      </div>
-      <div class="title-total">
-        <div class="title">{{user.company.name}}</div>
-        <h2>{{ user.name }}</h2>
-
-        <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in
-          their pants.</div>
-        <div class="actions">
-          <button><i class="far fa-heart"></i></button>
-          <button @click="openEmail(user.email)"><i class="far fa-envelope"></i></button>
-          <button><i class="fas fa-user-friends"></i></button>
+        <div class="img-avatar">
+          <minidenticon-svg :key="user.id" :username="user.username"></minidenticon-svg>
         </div>
       </div>
-
+      <div class="title-total">
+        <div class="title">{{ user.company.name }}</div>
+        <h2>{{ user.name }}</h2>
+        <div class="user-data">{{ user.phone }}</div>
+        <div class="user-data">{{ user.email }}</div>
+        <a :href="'https://' + user.website" target="_blank" class="user-data site">{{ user.website }}</a>
+        <div class="actions">
+          <button><i class="fa-solid fa-heart"></i></button>
+          <button @click="openEmail(user.email)"><i class="fa-solid fa-envelope"></i></button>
+          <button @click="openGeo(user.address.geo)"><i class="fa fa-map-location-dot"></i></button>
+        </div>
+      </div>
     </div>
-
-
-
   </div>
 </template>
 <script>
-import { minidenticonSvg } from 'https://cdn.jsdelivr.net/npm/minidenticons@4.2.0/minidenticons.min.js'
+import { minidenticonSvg } from '../libs/minidenticons.min.js'
 export default {
   name: "ContactLeadItem",
   components: { minidenticonSvg },
@@ -39,9 +33,101 @@ export default {
   mounted() { },
   methods: {
     openEmail(url) {
-      return window.location.href =  "mailto: " + url
-    }
+      return window.location.href = `mailto: ${url}`
+    },
+    openGeo(geo) {
+      return window.open(`https://www.google.com/maps/dir//${geo.lng}, ${geo.lat}`, '_blank');
+    },
   },
 }
 </script>
-<style></style>
+<style>
+.card {
+  background: #fff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  width: 400px;
+  flex-direction: row;
+  /* border-radius: 25px; */
+}
+
+.card h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.card .title {
+  padding: 1rem;
+  text-align: right;
+  color: green;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.card .desc {
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+}
+
+.card .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.img-avatar {
+  width: 80px;
+  height: 80px;
+  /* border-radius: 50%; */
+  border: 6px solid white;
+  background-color: black;
+  top: 15px;
+  left: 85px;
+}
+
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.title-total {
+  padding: 2.5em 1.5em 1.5em 1.5em;
+
+  .user-data {
+    margin-left: 16px;
+    padding: 0px 0px 5px 0px;
+  }
+
+  .site {
+    text-decoration: none;
+    color: green;
+  }
+}
+
+.portada {
+  width: 100%;
+  height: 100%;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
+  background-color: green;
+  background-position: bottom center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #8bc34a;
+  cursor: pointer;
+  transition: .5s;
+
+  &:hover {
+    color: #4CAF50;
+    transform: rotate(22deg)
+  }
+}
+</style>

@@ -1,6 +1,8 @@
 <template>
-  <div v-for="user in users">
-    <ContactLeadItem :user="user" />
+  <div class="contact-leads">
+    <div class="container-contact-leads" v-for="user in users">
+      <ContactLeadItem :user="user" />
+    </div>
   </div>
 </template>
 <script>
@@ -17,4 +19,14 @@ export default {
   methods: {},
 }
 </script>
-<style></style>
+<style>
+.contact-leads {
+  margin-top: 95px;
+  .container-contact-leads {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+</style>
