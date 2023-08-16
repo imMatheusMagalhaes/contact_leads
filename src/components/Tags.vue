@@ -46,9 +46,9 @@ export default {
 
       const tagsToCompare = this.chips.filter(chip => this.selectedChips[chip])
       const result = this.cloneUsers.filter(user => tagsToCompare.some(tag => user.company.bs.includes(tag)))
-      
+
       if (tagsToCompare.length === 0)
-        store.users = this.cloneUsers
+        store.users = store.atualUsersPage
       else
         store.users = result
 
@@ -64,34 +64,52 @@ export default {
 }
 </script>
 <style>
+.chip-no-select {
+  background-color: white;
+  color: green;
+  font-size: small;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid green;
+}
+
+.chip-select {
+  background-color: green;
+  color: white;
+  font-size: small;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container-tags div button {
+  cursor: pointer;
+  transition: .5s;
+
+  &:hover {
+    color: #e2feeb;
+    background-color: green;
+  }
+}
+
 .container-tags {
-  padding-top: 75px;
+  margin-top: 75px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  width: 80%;
-  height: 130px;
+  width: 99%;
+}
 
-  .chip-no-select {
-    background-color: white;
-    color: green;
-    font-size: small;
-    margin: 1px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid green;
+@media (min-width: 450px) {
+  .container-tags {
+    margin-top: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
   }
-
-  .chip-select {
-    background-color: green;
-    color: white;
-    font-size: small;
-    margin: 1px;
-    padding: 5px;
-    border-radius: 10px;
-  }
-
 }
 </style>

@@ -43,8 +43,7 @@ export default {
 <style>
 .card {
   background: #fff;
-  width: 400px;
-  flex-direction: row;
+  width: 100%;
 }
 
 .card h2 {
@@ -60,15 +59,11 @@ export default {
   font-size: 12px;
 }
 
-.card .desc {
-  padding: 0.5rem 1rem;
-  font-size: 12px;
-}
-
 .card .actions {
   display: flex;
-  width: 10%;
+  width: 40%;
   padding: 11px;
+  justify-content: space-between;
 }
 
 .img-avatar {
@@ -76,8 +71,6 @@ export default {
   height: 80px;
   border: 6px solid white;
   background-color: black;
-  top: 15px;
-  left: 85px;
 }
 
 .card-text {
@@ -86,7 +79,7 @@ export default {
 }
 
 .title-total {
-  padding: 2.5em 1.5em 1.5em 1.5em;
+  margin-left: 25px;
 
   .user-data {
     margin-left: 16px;
@@ -110,7 +103,7 @@ export default {
   justify-content: center;
 }
 
-button {
+.card .actions button {
   border: none;
   background: none;
   font-size: 24px;
@@ -119,7 +112,7 @@ button {
   transition: .5s;
 
   &:hover {
-    color: #4CAF50;
+    color: #e2feeb;
     transform: rotate(22deg)
   }
 }

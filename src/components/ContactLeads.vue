@@ -21,11 +21,16 @@ export default {
 </script>
 <style>
 .contact-leads {
-  .container-contact-leads {
-    margin: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 530px;
+}
+
+@media (max-width:450px) {
+  .contact-leads {
+    width: 402px;
   }
+}
+
+.container-contact-leads {
+  margin: 20px;
 }
 </style>

@@ -12,5 +12,6 @@ export const store = reactive({
     } else {
       this.users = JSON.parse(usersStorages)
     }
-  }
+  },
+  atualUsersPage: [],
 })
