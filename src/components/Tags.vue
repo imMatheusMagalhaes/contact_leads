@@ -87,10 +87,11 @@ export default {
   cursor: pointer;
   transition: .5s;
 
-  &:hover {
-    color: #e2feeb;
-    background-color: green;
-  }
+}
+
+.container-tags div button:hover {
+  color: #e2feeb;
+  background-color: green;
 }
 
 .container-tags {

@@ -77,10 +77,11 @@ export default {
   background-color: white;
   border: none;
 
-  &:hover {
-    background-color: #4CAF50;
-    color: white;
-  }
+}
+
+.pagination-button:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
 .pagination-button-selected {

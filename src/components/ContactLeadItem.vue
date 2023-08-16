@@ -81,15 +81,16 @@ export default {
 .title-total {
   margin-left: 25px;
 
-  .user-data {
-    margin-left: 16px;
-    padding: 0px 0px 5px 0px;
-  }
+}
 
-  .site {
-    text-decoration: none;
-    color: green;
-  }
+.user-data {
+  margin-left: 16px;
+  padding: 0px 0px 5px 0px;
+}
+
+.site {
+  text-decoration: none;
+  color: green;
 }
 
 .portada {
@@ -111,9 +112,9 @@ export default {
   cursor: pointer;
   transition: .5s;
 
-  &:hover {
-    color: #e2feeb;
-    transform: rotate(22deg)
-  }
+}
+.card .actions button:hover {
+  color: #e2feeb;
+  transform: rotate(22deg)
 }
 </style>
